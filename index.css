@@ -1,0 +1,30 @@
+img {
+    border: 5px red solid;
+    width: 60%;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+}
+
+.screen {
+    border: 5px blue solid;
+    position: absolute;
+    left: 374px;
+    top: 85px;
+    width: 240px;
+    height: 445px;
+}
+
+.output {
+    border: 5px green solid;
+    height: 100px;
+    background-color: darkblue;
+}
+
+.input {
+    border: 5px white solid;
+    height: 325px;
+    background-color: grey;
+}
