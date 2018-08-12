@@ -17,3 +17,10 @@ const divide = (x, y) => {
 const operate = (operator, a, b) => {
     return operator(a, b);
 }
+
+const keystrokes = document.querySelector(".keystrokes");
+
+const numberBtns = document.querySelectorAll(".displayNum");
+numberBtns.forEach(numberBtn =>
+  numberBtn.addEventListener("click", e => keystrokes.textContent = e.target.textContent)
+);

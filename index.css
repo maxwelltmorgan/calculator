@@ -4,6 +4,7 @@
 
 html {
     font-family: helvetica;
+    width: 1000px;
 }
 
 img {
@@ -25,7 +26,7 @@ img {
 }
 
 .output {
-    height: 100px;
+    height: 115px;
     background-color: darkblue;
 }
 
@@ -86,8 +87,21 @@ img {
 }
 
 .num {
-    background: darkblue;
+    background: linear-gradient(to bottom left, darkblue, #0000cc);
     color: white;
     border: none;
     font-weight: 100;
+}
+
+button:focus {
+    outline: none;
+}
+
+.num:hover {
+    background: darkblue;
+}
+
+.num:active {
+    background: white;
+    color: darkblue;
 }
