@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: helvetica;
+}
+
 img {
     border: 5px red solid;
     width: 60%;
@@ -9,22 +17,77 @@ img {
 }
 
 .screen {
-    border: 5px blue solid;
     position: absolute;
-    left: 374px;
-    top: 85px;
+    left: 380px;
+    top: 58px;
     width: 240px;
-    height: 445px;
+    height: 460px;
 }
 
 .output {
-    border: 5px green solid;
     height: 100px;
     background-color: darkblue;
 }
 
-.input {
-    border: 5px white solid;
-    height: 325px;
-    background-color: grey;
+.keystrokes {
+    text-align: right;
+    font-size: 25px;
+    font-weight: 100;
+    color: white;
+    padding: 25px 5px 5px 5px;
+    margin-bottom: 0;
+}
+
+.results {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 100;
+    color: dodgerblue;
+    padding: 5px;
+    margin-top: 0;
+}
+
+.calculator-buttons {
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.calc-button  {
+  background: white;
+  border: 1px solid darkblue;
+  padding: 20px;
+  color: darkblue;
+  font-size: 20px;
+}
+
+.is-zero,
+.is-clear   {
+  grid-column: span 2;
+}
+
+.is-clear   {
+  background: #3572DB;
+  font-size: 14px;
+  color: white;
+  padding: 10px;
+}
+
+.is-back {
+  font-size: 14px;
+  padding: 10px;
+  background-color: lightgrey;
+  color: slategrey;
+}
+
+.is-equals {
+    background: limegreen;
+    color: white;
+}
+
+.num {
+    background: darkblue;
+    color: white;
+    border: none;
+    font-weight: 100;
 }
