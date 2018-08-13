@@ -19,8 +19,23 @@ const operate = (operator, a, b) => {
 }
 
 const keystrokes = document.querySelector(".keystrokes");
+const numberBtns = Array.from(document.querySelectorAll(".calc-button"));
 
-const numberBtns = document.querySelectorAll(".displayNum");
+const newValueArray = [];
+const displayVal = {};
+
+const setDisplay = (e) => {
+    if(e.target.id != "operator"){
+        newValueArray.push(e.target.textContent);
+        displayVal.newValue = parseInt(newValueArray.join(""));
+        keystrokes.textContent = displayVal.newValue;
+    } else {
+        newValueArray.length = 0;
+        displayVal.operator = e.target.textContent;
+        keystrokes.textContent = 0;
+    };
+}
+
 numberBtns.forEach(numberBtn =>
-  numberBtn.addEventListener("click", e => keystrokes.textContent = e.target.textContent)
+  numberBtn.addEventListener("click", e => setDisplay(e))
 );

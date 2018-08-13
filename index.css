@@ -105,3 +105,12 @@ button:focus {
     background: white;
     color: darkblue;
 }
+
+#operator:hover {
+    background-color: lightgrey;
+}
+
+#operator:active {
+    background-color: white;
+    color: darkblue;
+}
