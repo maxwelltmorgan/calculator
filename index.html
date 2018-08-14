@@ -9,32 +9,31 @@
     <div class="phone">
         <div class="screen">
             <div class="output">
-                <p class="keystrokes">0</p>
-                <p class="results">80</p>
+                <p class="keystrokes input">0</p>
             </div>
             <div class="calculator-buttons">
-                <button class="calc-button is-clear">CLEAR</button>
-                <button class="calc-button is-back"><i class="material-icons">backspace</i></button>
-                <button class="calc-button displayNum" id="operator">÷</button>
+                <button data-value="clear" class="calc-button is-clear clear">CLEAR</button>
+                <button data-value="del" class="calc-button is-back delete"><i class="material-icons">backspace</i></button>
+                <button data-value="&#xf7;" class="calc-button displayNum operation operations" id="operator">&#xf7;</button>
 
-                <button class="calc-button num displayNum" id="btn">7</button>
-                <button class="calc-button num displayNum" id="8">8</button>
-                <button class="calc-button num displayNum" id="9">9</button>
-                <button class="calc-button displayNum" id="operator">×</button>
+                <button data-value="7" class="calc-button num displayNum digit" id="btn">7</button>
+                <button data-value="8" class="calc-button num displayNum digit" id="8">8</button>
+                <button data-value="9" class="calc-button num displayNum digit" id="9">9</button>
+                <button data-value="&#xd7;" class="calc-button displayNum operation operations" id="operator">&#xd7;</button>
 
-                <button class="calc-button num displayNum" id="4">4</button>
-                <button class="calc-button num displayNum" id="5">5</button>
-                <button class="calc-button num displayNum" id="6">6</button>
-                <button class="calc-button displayNum" id="operator">−</button>
+                <button data-value="4" class="calc-button num displayNum digit" id="4">4</button>
+                <button data-value="5" class="calc-button num displayNum digit" id="5">5</button>
+                <button data-value="6" class="calc-button num displayNum digit" id="6">6</button>
+                <button data-value="-" class="calc-button displayNum operation operations" id="operator">−</button>
 
-                <button class="calc-button num displayNum" id="1">1</button>
-                <button class="calc-button num displayNum" id="2">2</button>
-                <button class="calc-button num displayNum" id="3">3</button>
-                <button class="calc-button displayNum" id="operator">&plus;</button>
+                <button data-value="1" class="calc-button num displayNum digit" id="1">1</button>
+                <button data-value="2" class="calc-button num displayNum digit" id="2">2</button>
+                <button data-value="3" class="calc-button num displayNum digit" id="3">3</button>
+                <button data-value="+" class="calc-button displayNum operation operations" id="operator">&plus;</button>
 
-                <button class="calc-button is-zero num displayNum" id="0">0</button>
-                <button class="calc-button num displayNum" id=".">.</button>
-                <button class="calc-button is-equals displayNum" id="operator">&equals;</button>
+                <button data-value="0" class="calc-button is-zero num displayNum digit" id="0">0</button>
+                <button data-value="." class="calc-button num displayNum digit" id=".">.</button>
+                <button data-value="=" class="calc-button is-equals displayNum equals" id="operator">&equals;</button>
             </div>
         </div>
     </div>

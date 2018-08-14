@@ -1,41 +1,105 @@
-const add = (x, y) => {
-    return x + y;
+let digits = document.querySelectorAll('.digit');
+let ops    = document.querySelectorAll('.operation');
+let equals = document.querySelector('.equals');
+let del    = document.querySelector('.delete');
+let clear  = document.querySelector('.clear');
+let input  = document.querySelector('.input');
+let inputV  = document.querySelector('.inputV');
+
+let inputVal = '';
+let outputVal;
+let operand;
+let operation;
+
+digits.forEach(digit => digit.addEventListener('click', typeIn));
+ops.forEach(operation => operation.addEventListener('click', selectOperation));
+equals.addEventListener('click', operate);
+clear.addEventListener('click', reset);
+del.addEventListener('click', delLast);
+
+function reset() {
+  inputVal  = '';
+  operand   = null;
+  operation = null;
+
+  display();
 }
 
-const subtract = (x, y) => {
-    return x - y;
+function delLast() {
+  inputVal = inputVal.slice(0, inputVal.length - 1);
+
+  display();
 }
 
-const multiply = (x, y) => {
-    return x * y;
+function selectOperation() {
+  if (inputVal) {
+    operation = this.getAttribute('data-value');
+
+    operand  = inputVal;
+    inputVal = '';
+
+    display();
+  }
 }
 
-const divide = (x, y) => {
-    return x / y;
+function typeIn() {
+  let value = this.getAttribute('data-value');
+
+  console.log(value);
+
+  if (value == '.' && inputVal.includes('.')) { return false; }
+  if (inputVal[0] === '0' && inputVal[1] !== '.' && value !== '.') { inputVal = ''; }
+
+  inputVal = inputVal.concat(value);
+
+  display();
+};
+
+function display() {
+  let output = '';
+
+  if (operand)   { output = output.concat(operand); }
+  if (operation) { output = output.concat(operation); }
+
+  output = output.concat(inputVal);
+
+  input.innerText = output;
+
 }
 
-const operate = (operator, a, b) => {
-    return operator(a, b);
+function add(a, b) { return a + b; }
+
+function subtract(a, b) { return a - b; }
+
+function multiply(a, b) { return a * b; }
+
+function divide(a, b) {
+  if (a == 0 || b == 0) { return 'Zero Division Error'; }
+
+  return a / b;
 }
 
-const keystrokes = document.querySelector(".keystrokes");
-const numberBtns = Array.from(document.querySelectorAll(".calc-button"));
+function operate() {
+  if (!operation || !operand || !inputVal) { return; }
 
-const newValueArray = [];
-const displayVal = {};
+  let result = '';
 
-const setDisplay = (e) => {
-    if(e.target.id != "operator"){
-        newValueArray.push(e.target.textContent);
-        displayVal.newValue = parseInt(newValueArray.join(""));
-        keystrokes.textContent = displayVal.newValue;
-    } else {
-        newValueArray.length = 0;
-        displayVal.operator = e.target.textContent;
-        keystrokes.textContent = 0;
-    };
+  switch (operation) {
+  case '+':
+    result = add(parseFloat(operand), parseFloat(inputVal));
+    break;
+  case '-':
+    result = subtract(parseFloat(operand), parseFloat(inputVal));
+    break;
+  case '×':
+    result = multiply(parseFloat(operand), parseFloat(inputVal));
+    break;
+  case '÷':
+    result = divide(parseFloat(operand), parseFloat(inputVal));
+    break;
+  }
+
+  reset();
+  inputVal = result;
+  display();
 }
-
-numberBtns.forEach(numberBtn =>
-  numberBtn.addEventListener("click", e => setDisplay(e))
-);
