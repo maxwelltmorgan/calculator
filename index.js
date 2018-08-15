@@ -4,7 +4,6 @@ let equals = document.querySelector('.equals');
 let del    = document.querySelector('.delete');
 let clear  = document.querySelector('.clear');
 let input  = document.querySelector('.input');
-let inputV  = document.querySelector('.inputV');
 
 let inputVal = '';
 let outputVal;
@@ -44,8 +43,6 @@ function selectOperation() {
 
 function typeIn() {
   let value = this.getAttribute('data-value');
-
-  console.log(value);
 
   if (value == '.' && inputVal.includes('.')) { return false; }
   if (inputVal[0] === '0' && inputVal[1] !== '.' && value !== '.') { inputVal = ''; }

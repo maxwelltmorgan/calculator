@@ -5,10 +5,11 @@
 html {
     font-family: helvetica;
     width: 1000px;
+    background: linear-gradient(to right, whitesmoke, gainsboro, silver, darkgrey, grey);
 }
 
 img {
-    border: 5px red solid;
+    top: 50px;
     width: 60%;
     display: block;
     position: relative;
@@ -20,23 +21,27 @@ img {
 .screen {
     position: absolute;
     left: 380px;
-    top: 58px;
+    top: 108px;
     width: 240px;
     height: 460px;
 }
 
 .output {
-    height: 115px;
+    height: 125px;
     background-color: darkblue;
 }
 
-.keystrokes {
+.input {
     text-align: right;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 100;
     color: white;
     padding: 50px 5px 5px 5px;
     margin-bottom: 0;
+}
+
+button:focus {
+    outline: none;
 }
 
 .calculator-buttons {
@@ -45,7 +50,7 @@ img {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.calc-button  {
+button {
   background: white;
   border: 1px solid darkblue;
   padding: 20px;
@@ -54,45 +59,58 @@ img {
 }
 
 .is-zero,
-.is-clear   {
+.clear   {
   grid-column: span 2;
 }
 
-.is-clear   {
+.clear {
   background: #3572DB;
   font-size: 14px;
   color: white;
   padding: 10px;
 }
 
-.is-back {
+.clear:hover {
+    background: white;
+    color: darkblue;
+}
+
+.clear:active {
+    background: #3572DB;
+}
+
+.delete {
   font-size: 14px;
   padding: 10px;
   background-color: lightgrey;
   color: slategrey;
 }
 
-.is-equals {
+.delete:hover {
+  color: darkblue;
+}
+
+.delete:active {
+  color: slategrey;
+}
+
+.equals {
     background: limegreen;
     color: white;
 }
 
-.num {
+.digit {
     background: linear-gradient(to bottom left, darkblue, #0000cc);
     color: white;
     border: none;
     font-weight: 100;
 }
 
-button:focus {
-    outline: none;
-}
-
-.num:hover {
+.digit:hover {
     background: darkblue;
 }
 
-.num:active {
+.digit:active {
     background: white;
     color: darkblue;
 }
