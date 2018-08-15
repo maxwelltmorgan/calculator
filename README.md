@@ -2,7 +2,7 @@
 
 ![calculator screenshot](calculator_screenshot.png)
 
-##Odin Project Calculator
+## Odin Project Calculator
 
 1. JavaScript, HTML, CSS
 
